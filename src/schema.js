@@ -4,7 +4,7 @@
 
 export const TABLES = {
   students: {
-    title: 'Students', emoji: '🎓', color: '#FFB5C2', pk: 'student_id',
+    title: 'Students', icon: 'people-outline', color: '#1E3A5F', pk: 'student_id',
     titleField: 'name', subtitle: (r) => `Roll ${r.roll_no} • Room ${r.room_no || '-'} • ${r.branch} Y${r.year}`,
     fields: [
       { key: 'name', label: 'Name', type: 'text', required: true },
@@ -17,7 +17,7 @@ export const TABLES = {
     ],
   },
   college: {
-    title: 'College Details', emoji: '🏫', color: '#B5D8FF', pk: 'college_id', onePerStudent: true,
+    title: 'College Details', icon: 'business-outline', color: '#2F5D8A', pk: 'college_id', onePerStudent: true,
     titleField: 'student_name', subtitle: (r) => `${r.college_name} • ID ${r.college_student_id}`,
     fields: [
       { key: 'student_id', label: 'Student', type: 'student', required: true },
@@ -30,8 +30,8 @@ export const TABLES = {
     ],
   },
   parents: {
-    title: 'Parents', emoji: '👨‍👩‍👧', color: '#C9F2C7', pk: 'parent_id', onePerStudent: true,
-    titleField: 'student_name', subtitle: (r) => `👨 ${r.father_name} • 👩 ${r.mother_name}`,
+    title: 'Parents', icon: 'home-outline', color: '#3F7D6E', pk: 'parent_id', onePerStudent: true,
+    titleField: 'student_name', subtitle: (r) => `Father: ${r.father_name} • Mother: ${r.mother_name}`,
     fields: [
       { key: 'student_id', label: 'Student', type: 'student', required: true },
       { key: 'father_name', label: 'Father Name', type: 'text', required: true },
@@ -44,7 +44,7 @@ export const TABLES = {
     ],
   },
   entry_exit: {
-    title: 'Entry / Exit', emoji: '🚪', color: '#FFE3A3', pk: 'entryexit_id',
+    title: 'Entry / Exit', icon: 'swap-horizontal-outline', color: '#8A6D2F', pk: 'entryexit_id',
     titleField: 'student_name', subtitle: (r) => `Out: ${r.exit_time || '-'}  In: ${r.entry_time || 'not back'}\n${r.reason}`,
     badge: 'approval_status',
     fields: [
@@ -56,7 +56,7 @@ export const TABLES = {
     ],
   },
   fees: {
-    title: 'Fees', emoji: '💰', color: '#D9C2FF', pk: 'fee_id',
+    title: 'Fees', icon: 'wallet-outline', color: '#4B5D7A', pk: 'fee_id',
     titleField: 'student_name', subtitle: (r) => `Total ₹${r.total_fees} • Paid ₹${r.paid} • Pending ₹${r.pending}`,
     badge: (r) => (Number(r.pending) <= 0 ? 'Paid' : 'Due'),
     fields: [
@@ -68,9 +68,9 @@ export const TABLES = {
     ],
   },
   mess: {
-    title: 'Mess', emoji: '🍱', color: '#FFCBA4', pk: 'mess_id',
+    title: 'Mess', icon: 'restaurant-outline', color: '#7A5A3F', pk: 'mess_id',
     titleField: 'student_name',
-    subtitle: (r) => `${r.date}   ${r.breakfast ? '🥞' : '✖️'} B   ${r.lunch ? '🍛' : '✖️'} L   ${r.dinner ? '🍲' : '✖️'} D`,
+    subtitle: (r) => `${r.date}   •  Breakfast ${r.breakfast ? '✓' : '–'}   Lunch ${r.lunch ? '✓' : '–'}   Dinner ${r.dinner ? '✓' : '–'}`,
     fields: [
       { key: 'student_id', label: 'Student', type: 'student', required: true },
       { key: 'date', label: 'Date', type: 'date', required: true },
@@ -80,7 +80,7 @@ export const TABLES = {
     ],
   },
   complaints: {
-    title: 'Complaints', emoji: '📝', color: '#A8E6E2', pk: 'complaint_id',
+    title: 'Complaints', icon: 'chatbox-ellipses-outline', color: '#8A3F3F', pk: 'complaint_id',
     titleField: 'student_name', subtitle: (r) => `${r.date} • ${r.complaint}`,
     badge: 'status',
     fields: [

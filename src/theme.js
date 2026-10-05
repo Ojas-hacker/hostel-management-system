@@ -1,8 +1,10 @@
 export const C = {
-  bg: '#FFF7FA', card: '#FFFFFF', primary: '#FF7AA2', primaryDark: '#E85A86',
-  text: '#3D2C3E', muted: '#8E7A90', border: '#F3DCE5', danger: '#FF6B6B',
+  bg: '#F4F6F9', card: '#FFFFFF', primary: '#1E3A5F', primaryDark: '#152B47',
+  text: '#1F2937', muted: '#6B7280', border: '#E5E7EB', danger: '#B42318',
 };
+// Muted status colours: [background, text]
 export const BADGE = {
-  Pending: '#FFD66B', Approved: '#7ED957', Rejected: '#FF8A8A',
-  Open: '#FF8A8A', 'In Progress': '#FFD66B', Resolved: '#7ED957', Paid: '#7ED957', Due: '#FF8A8A',
+  Pending: ['#FEF3C7', '#92400E'], Approved: ['#DCFCE7', '#166534'], Rejected: ['#FEE2E2', '#991B1B'],
+  Open: ['#FEE2E2', '#991B1B'], 'In Progress': ['#FEF3C7', '#92400E'], Resolved: ['#DCFCE7', '#166534'],
+  Paid: ['#DCFCE7', '#166534'], Due: ['#FEE2E2', '#991B1B'],
 };

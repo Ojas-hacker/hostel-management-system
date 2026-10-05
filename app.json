@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Cozy Hostel",
+    "name": "Hostel Manager",
     "slug": "hostel-management-system",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -11,7 +11,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#FFE4EC",
+        "backgroundColor": "#1E3A5F",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
