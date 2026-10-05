@@ -14,7 +14,10 @@ export default function App() {
 
   const nav = useMemo(() => ({
     push: (route) => setStack((st) => [...st, route]),
-    pop: (n = 1) => setStack((st) => (st.length > 1 ? st.slice(0, Math.max(1, st.length - n)) : st)),
+    pop: (n) => {
+      const count = typeof n === 'number' ? n : 1; // onPress passes an event object
+      setStack((st) => (st.length > 1 ? st.slice(0, Math.max(1, st.length - count)) : st));
+    },
   }), []);
 
   useEffect(() => {
@@ -25,7 +28,7 @@ export default function App() {
     return () => sub.remove();
   }, [stack.length, nav]);
 
-  const route = stack[stack.length - 1];
+  const route = stack[stack.length - 1] ?? { name: 'dashboard' };
   const common = { nav, version, onSaved: () => setVersion((v) => v + 1) };
   let screen;
   if (!user) screen = <LoginScreen onLogin={setUser} />;

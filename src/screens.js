@@ -69,7 +69,7 @@ export function ListScreen({ nav, table, version }) {
   const badgeOf = (r) => (typeof t.badge === 'function' ? t.badge(r) : r[t.badge]);
   return (
     <View style={{ flex: 1 }}>
-      <Header title={`${t.emoji} ${t.title}`} onBack={nav.pop} />
+      <Header title={`${t.emoji} ${t.title}`} onBack={() => nav.pop()} />
       <View style={{ padding: 16, paddingBottom: 0 }}>
         <Input value={q} onChangeText={setQ} placeholder="🔍 Search by name / roll no" />
       </View>
